@@ -6,18 +6,19 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { SearchPageModule } from './pages/search-page/search-page.module';
-import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.component';
+import { RouterModule } from '@angular/router';
+import { DefaultLayoutsModule } from './layouts/default-layout/default-layout.module';
+
 @NgModule({
   declarations: [
     AppComponent,
-    DefaultLayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    SearchPageModule
+    DefaultLayoutsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
