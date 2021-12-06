@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { SearchPageModule } from './pages/search-page/search-page.module';
+import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DefaultLayoutComponent
   ],
   imports: [
     BrowserModule,
