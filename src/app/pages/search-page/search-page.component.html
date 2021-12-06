@@ -4,8 +4,8 @@
       <div class="col-md-6 mx-auto">
           <mat-card>
                 <div class="seach-wrapper d-flex flex-wrap">
-                  <app-search-bar></app-search-bar>
-                  <app-field-filter [fields]="searchableFields"></app-field-filter>
+                  <app-search-bar (valueChange)="setSearchValue($event)"></app-search-bar>
+                  <app-field-filter (fieldChange)="setfilterField($event)" [fields]="searchableFields"></app-field-filter>
                 </div>
           </mat-card>
       </div>

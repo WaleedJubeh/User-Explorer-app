@@ -22,7 +22,6 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     //we can debounce for 200ms before emitting...
     this.debouncerSub = this.debouncer$.pipe(debounceTime(200)).subscribe((value) => {
-      console.log(value);
       this.valueChange.emit(value);
     })
   }
