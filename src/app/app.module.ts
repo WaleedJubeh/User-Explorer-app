@@ -16,6 +16,7 @@ import { SearchPageModule } from './pages/search-page/search-page.module';
     BrowserAnimationsModule,
     HttpClientModule,
     SearchPageModule
+    
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
