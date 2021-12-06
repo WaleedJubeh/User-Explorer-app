@@ -13,10 +13,10 @@ const components = [
 ];
 
 @NgModule({
-  declarations: components,
+  declarations: [],
   imports: [
-    CommonModule
-  ],
-  exports: components
+    CommonModule,
+    ...components
+  ]
 })
 export class MaterialUiModule { }

@@ -18,7 +18,6 @@ import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.
     BrowserAnimationsModule,
     HttpClientModule,
     SearchPageModule
-    
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
