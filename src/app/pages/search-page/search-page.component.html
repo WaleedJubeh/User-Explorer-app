@@ -17,7 +17,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6" *ngFor="let user of users">
+  <div class="col-md-6" *ngFor="let user of users | searchFilter:filterState.filterField:filterState.searchValue">
     <app-user-card [user]='user'></app-user-card>
   </div>
 </div>

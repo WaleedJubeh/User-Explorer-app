@@ -4,7 +4,7 @@ export namespace NSSearch {
         filterField: string;
     }
 
-    export interface IUser {
+    export interface IUser extends Record<string, string> {
         id: string;
         name: string;
         username: string;

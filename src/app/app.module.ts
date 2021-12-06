@@ -9,7 +9,7 @@ import { DefaultLayoutsModule } from './layouts/default-layout/default-layout.mo
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
