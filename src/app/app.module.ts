@@ -4,8 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { DefaultLayoutsModule } from './layouts/default-layout/default-layout.module';
+import { HttpErrorInterceptor } from './interceptors/http-error-interceptor.interceptor';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,18 @@ import { DefaultLayoutsModule } from './layouts/default-layout/default-layout.mo
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    DefaultLayoutsModule
+    DefaultLayoutsModule,
+    MatSnackBarModule
   ],
-  providers: [HttpClient],
+  providers: [
+    HttpClient, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: HttpErrorInterceptor,
+    },
+    MatSnackBar
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,7 +11,7 @@ import { catchError } from 'rxjs/operators';
 import { ToastService } from '../services/toast.service';
 
 @Injectable()
-export class HttpInterceptorInterceptor implements HttpInterceptor {
+export class HttpErrorInterceptor implements HttpInterceptor {
 
   constructor(private toastCtrl: ToastService) {}
 
@@ -25,17 +25,17 @@ export class HttpInterceptorInterceptor implements HttpInterceptor {
   }
   handleErrors(err: HttpErrorResponse) {
     switch (err.status) {
-      case 400:
-      case 404:
-        this.handleError(err);
-        break;
-      case 401:
       case 403:
         //not necessary to handle authentication in this app
         break;
+      case 400:
+      case 404:
+      case 401:
       case 500:
         this.handleError(err);
         break;
+      default: 
+        this.handleError(err);
     }
   }
   
