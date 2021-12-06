@@ -1,0 +1,19 @@
+:host
+    .card-body
+            display: flex
+            flex-wrap: wrap
+            height: 100%
+            .label-group
+                flex: 0 0 50%
+                display: flex
+                flex-direction: column
+                margin-bottom: 10px
+                > label:first-child
+                    font-size: 12px
+                    font-weight: 500
+                    color: #3f51b5
+
+    @media only screen and (max-width: 768px)
+        .card-body
+            .label-group
+                flex: 0 0 100%

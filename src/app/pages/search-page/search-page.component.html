@@ -2,13 +2,22 @@
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-6 mx-auto">
-          <mat-card>
-                <div class="seach-wrapper d-flex flex-wrap">
-                  <app-search-bar (valueChange)="setSearchValue($event)"></app-search-bar>
-                  <app-field-filter (fieldChange)="setfilterField($event)" [fields]="searchableFields"></app-field-filter>
-                </div>
-          </mat-card>
+        <mat-card>
+          <div class="seach-wrapper d-flex flex-wrap">
+            <app-search-bar (valueChange)="setSearchValue($event)"></app-search-bar>
+            <app-field-filter
+              (fieldChange)="setfilterField($event)"
+              [fields]="searchableFields"
+            >
+            </app-field-filter>
+          </div>
+        </mat-card>
       </div>
     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6" *ngFor="let user of users">
+    <app-user-card [user]='user'></app-user-card>
   </div>
 </div>
