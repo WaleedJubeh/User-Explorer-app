@@ -1,0 +1,13 @@
+<div>
+    <label>Field</label>
+    <div>
+        <mat-button-toggle-group (change)="getChangedField($event)" name="field" aria-label="Search Field">
+            <ng-container *ngFor="let field of fields; let i = index">
+                <mat-button-toggle *ngIf="i == 0" [value]="field" checked>{{field | titlecase }}</mat-button-toggle>
+                <!-- Since ng-template has no access to private variables -->
+                <!-- Use another ngif -->
+                <mat-button-toggle *ngIf="i > 0" [value]="field">{{field | titlecase }}</mat-button-toggle>
+            </ng-container>
+        </mat-button-toggle-group>
+    </div>
+</div>

@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-page.component.sass']
 })
 export class SearchPageComponent implements OnInit {
-
+  searchableFields = ['name', 'username', 'email'];
+  
   constructor() { }
 
   ngOnInit(): void {

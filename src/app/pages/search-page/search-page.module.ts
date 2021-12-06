@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchPageComponent } from './search-page.component';
 import { MaterialUIModule } from 'src/app/modules/material-ui/material-ui.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { SearchModule } from 'src/app/components/search/search.module';
 
 
 
@@ -11,8 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
-    MaterialUIModule
+    MaterialUIModule,
+    SearchModule
   ],
   exports: [SearchPageComponent]
 })
