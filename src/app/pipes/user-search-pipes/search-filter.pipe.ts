@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { NSSearch } from '../namespaces/search.namespace';
+import { NSSearch } from '../../namespaces/search.namespace';
 
 @Pipe({
   name: 'searchFilter'
