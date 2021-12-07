@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NSSearch } from 'src/app/namespaces/search.namespace';
 import { UserService } from 'src/app/services/user.service';
 
@@ -15,10 +16,10 @@ export class SearchPageComponent implements OnInit {
   }
   users: NSSearch.IUser[] = [];
   
-  constructor(private userService: UserService) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void { 
-    this.loadUsers();
+    this.route.data.subscribe((data) => this.users = data.users).unsubscribe();
   }
 
   setSearchValue(event: string) {
@@ -27,9 +28,5 @@ export class SearchPageComponent implements OnInit {
   
   setfilterField(event: string) {
     this.filterState.filterField = event;
-  }
-
-  loadUsers() {
-    return this.userService.getUsers().then(users => this.users = users);
   }
 }

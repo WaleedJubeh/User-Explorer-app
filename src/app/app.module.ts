@@ -8,6 +8,7 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/
 import { DefaultLayoutsModule } from './layouts/default-layout/default-layout.module';
 import { HttpErrorInterceptor } from './interceptors/http-error-interceptor.interceptor';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MaterialUIModule } from './modules/material-ui/material-ui.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     BrowserAnimationsModule,
     HttpClientModule,
     DefaultLayoutsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MaterialUIModule
   ],
   providers: [
     HttpClient, 

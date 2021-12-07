@@ -9,13 +9,12 @@ export class UserService {
 
   constructor(private api: ApiService) { }
 
-  async getUsers() {
+  getUsers() {
     /*  since apiService uses first() operator
         no need to unsubscribe
         Errors handled in interceptor
     */
     // convert to promise will make the code more clean
-    const users = <NSSearch.IUser[]> await this.api.get('users').toPromise();
-    return users;
+    return this.api.get('users');
   }
 }
